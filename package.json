@@ -1,0 +1,45 @@
+{
+  "name": "boilerplate-express",
+  "version": "0.0.1",
+  "author": "Dmitry Sheiko (http://dsheiko.com)",
+  "main": "index.js",
+  "scripts": {
+    "start": "DEBUG=HTTP,ERROR,AUTH, nodemon index.js -p 9002",
+    "test": "jasmine",
+    "update:doc": "apidoc -i Controller -o doc && apidoc-markdown -p doc -o ./API.md",
+    "migrate": "node_modules/.bin/sequelize  db:migrate",
+    "create-model": "node_modules/.bin/sequelize-auto -h localhost -u root -p  -o \"./models\"",
+    "migrate:rollback": "node_modules/.bin/sequelize  db:migrate:undo"
+  },
+  "keywords": [
+    "bode",
+    "express",
+    "starter",
+    "boilerplate",
+    "hot"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "debug": "^3.1.0",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.2",
+    "minimist": "^1.2.0",
+    "mysql2": "^1.5.3",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "sequelize": "^4.38.0"
+  },
+  "devDependencies": {
+    "apidoc": "^0.17.6",
+    "apidoc-markdown": "^0.2.0",
+    "jasmine": "^2.9.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}
